@@ -14,7 +14,7 @@ def book_file():
 
     with open('library.txt', 'w') as f:
 
-            f.write(f'{new_book['title']}, {new_book['author']}, {new_book['year']}, {new_book['rating']}, {new_book['pages']}\n')
+            f.write(f"{new_book['title']}, {new_book['author']}, {new_book['year']}, {new_book['rating']}, {new_book['pages']}\n")
 
 
 ### Step 2 - Read data from a .txt
