@@ -37,25 +37,21 @@ def book_info(book):
 # Code below
 
 def book_title(book):
-    book_string = book['title']
-    return book_string
-    
+    return book['title']
+      
 def book_author(book):
-    book_string = book['author']
-    return book_string
-    
+    return book['author']
+     
 def book_year(book):
-    book_string = book['year']
-    return book_string
+    return book['year']
+     
     
 def book_rating(book):
-    book_string = book['rating']
-    return book_string
-    
+    return book['rating']
+       
 def book_pages(book):
-    book_string = book['pages']
-    return book_string
-    
+    return book['pages']
+      
 def all_authors(arr):
     for book in arr:
         print(book['author'])
@@ -76,7 +72,7 @@ def total_pages(arr):
 # Code below
 def title_search(book):
     if "title" in book:
-        book_string = f'{book['title']} is here\n{book_info(book)}'
+        book_string = f"{book['title']} is here\n{book_info(book)}"
         return book_string
     else:
         return "That title is not here." 
@@ -84,10 +80,15 @@ def title_search(book):
 #print(title_search(my_book))
 
 
-def all_books(titles):
-    return titles
+def longest_book(titles):
+    book_length = []
+    for book in titles:
+         book_length.append(book['pages'])
+    book_length.sort()
+    return f'longest book is {book_length[-1]} pages long '
 
-#print(all_books(titles))
+
+print(longest_book(titles))
 
 def all_titles(arr):
     for book in arr:

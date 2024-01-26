@@ -88,7 +88,7 @@ def book_insert():
 
 # Code here
 def main_menu():
-    choice = int(input("\nbook insert:1 \nthere:2 \npage count:3 \nnewest book:4 \nnames of all books:5 \nexit:6 \n\nwhich number did you pick? - "))
+    choice = int(input("\nbook insert:1 \nbest rating:2 \npage count:3 \nnewest book:4 \nnames of all books:5 \nexit:6 \n\nwhich number did you pick? - "))
     print(choice)
 
     if choice == 1:
@@ -96,9 +96,21 @@ def main_menu():
 
         with open('library.txt', 'a') as f:
         
-            f.write(f'{new_book['title']}, {new_book['author']}, {new_book['year']}, {new_book['rating']}, {new_book['pages']}\n')
+            f.write(f"{new_book['title']}, {new_book['author']}, {new_book['year']}, {new_book['rating']}, {new_book['pages']}\n")
     elif choice == 2:
-        print('there')
+        print('best rating')
+
+        with open('library.txt', 'r') as f:
+            file = f.readlines()
+
+            rating = []
+
+            for line in file:
+                line = line.split(', ')
+                rating.append(float(line[3]))
+
+            rating.sort(reverse=True)
+            print(f'the best rating is {rating[0]}')
     elif choice == 3:
         print('page count')
 
